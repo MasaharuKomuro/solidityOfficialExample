@@ -1,0 +1,45 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="dist/simple_payment_channel.js"></script>
+</head>
+<body>
+
+<div class="sign">
+  <ul>
+    <li>contract: <input type="text" name="contract"></li>
+    <li>value: <input type="text" name="value"></li>
+  </ul>
+
+  <div>
+    <button onclick="doSign()"> 計算</button>
+  </div>
+
+  <div>
+    <input type="text" name="result">
+  </div>
+</div>
+
+<hr>
+
+<div class="verify">
+  <ul>
+    <li>contract: <input type="text" name="contract"></li>
+    <li>value: <input type="text" name="value"></li>
+    <li>signature: <input type="text" name="signature"></li>
+    <li>expectedSigner: <input type="text" name="expectedSigner"></li>
+  </ul>
+
+  <div>
+    <button onclick="doVerify()"> 計算</button>
+  </div>
+
+  <div>
+    <input type="text" name="result">
+  </div>
+</div>
+
+
+
+</body>
+</html>

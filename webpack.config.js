@@ -1,10 +1,17 @@
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
-  entry: ['@babel/polyfill', './src/index.js'], // polyfill はIE11などで必要
+  entry: {
+    micro_payment_channel: [
+      './src/micro_payment_channel.js',
+    ],
+    simple_payment_channel: [
+      './src/simple_payment_channel.js',
+    ],
+  },
   output: {
     path: `${__dirname}/dist`,
-    filename: 'main.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
