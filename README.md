@@ -4,4 +4,7 @@
 npm run build
 ```
 
-ブラウザでindex.htmlにアクセスする
+micro_payment_channel.html
+もしくは
+simple_payment_channel.html
+にアクセスする
