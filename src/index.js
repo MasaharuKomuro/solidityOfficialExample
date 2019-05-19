@@ -14,11 +14,22 @@ const callback = (error, message) => {
   console.log(global.message);
 };
 
-signPayment(
-  '0x902a72a16ac342d29ee7737216767515784ad5bc',
-  web3.toWei(1, 'ether'),
-  1,
-  '0x77fb65ac5bde1c6b9b37d52692ddf4f99913bd3d',
-  callback
-);
+//signPayment(
+//  '0x902a72a16ac342d29ee7737216767515784ad5bc',
+//  web3.toWei(1, 'ether'),
+//  1,
+//  '0x77fb65ac5bde1c6b9b37d52692ddf4f99913bd3d',
+//  callback
+//);
 
+global.calc = () => {
+  const recipient = document.querySelector('[name=recipient]').value;
+  const value = web3.toWei(document.querySelector('[name=value]').value, 'ether');
+  const nonce = document.querySelector('[name=nonce]').value;
+  const contract = document.querySelector('[name=contract]').value;
+  signPayment(
+    recipient, value, nonce, contract, (error, message) => {
+      document.querySelector('[name=result]').value = message;
+    }
+  )
+};
